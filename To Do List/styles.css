@@ -1,0 +1,107 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    background-color: rgb(100, 8, 100);
+    color: rgb(43, 61, 222); /* This line changes the text color */
+    height: 100vh; /* This sets the body height to 100% of the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* This aligns the main-container to the top */
+    padding-top: 10vh; /* This pushes the main-container a quarter down the page */
+}
+
+#main-container {
+    width: 70%;
+    background-color: rgb(29, 194, 236);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* This allows the content to scroll if it exceeds the container height */
+    max-height: 75vh; /* This prevents the main-container from exceeding 75% of the viewport height */
+}
+
+#header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#header-image {
+    height: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+#task-input {
+    flex: 4;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+#add-task-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: rgb(255, 68, 0);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 70%;
+    margin: 20px auto;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Existing styles remain the same */
+
+.check-btn {
+    border: 2px solid orange;  /* Make the circle always visible */
+    background-color: transparent;
+    color: transparent;  /* Make the tick mark invisible initially */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.check-btn.clicked {
+    color: white;  /* Make the tick mark white when the button is clicked */
+    background-color: rgb(255, 81, 0);  /* Fill the circle with orange when the button is clicked */
+}
+
+.delete-btn {
+    border: none;
+    background-color: red;
+    color: white;
+    margin-left: auto;  /* Push the button to the far right */
+    cursor: pointer;
+}
+
+.task-done {
+    text-decoration: line-through;  /* This will strike-through the task */
+}
+
