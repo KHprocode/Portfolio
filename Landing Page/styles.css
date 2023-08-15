@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f3f3f3;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 20px;
+    color: #fff;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ecf0f1;
+    padding: 100px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-photo {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 300px;
+    border-radius: 50%;
+    border: 2px solid #2980b9;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.education-content {
+    text-align: center; /* Center the content */
+}
+
+.resume-table,
+.education-table {
+    margin: 0 auto; /* Center the table */
+    width: 80%; /* Set the table width */
+    border-collapse: collapse; /* Remove spacing between cells */
+}
+
+.resume-table td,
+.education-table td {
+    padding: 10px; /* Add padding to table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ccc; /* Add a border between rows */
+}
+
+.resume-table td:first-child,
+.education-table td:first-child {
+    width: 60%; /* Set the width of the first column */
+    font-weight: bold; /* Make the first column bold */
+}
+
+.skills {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.skills h2 {
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Spacing between items */
+}
+
+.skill {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #f3f3f3;
+}
+
+.contact {
+    padding: 20px;
+    text-align: center;
+    background: #2c3e50;
+    color: #ffffff;
+}
+
+.contact a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #0109a1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
