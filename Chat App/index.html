@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('message', function(msg) {
+            var ul = document.getElementById('messages');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(msg));
+            ul.appendChild(li);
+        });
+
+        function sendMessage() {
+            var input = document.getElementById('messageInput');
+            socket.emit('message', input.value);
+            input.value = '';
+        }
+
+        function joinRoom(roomName) {
+            socket.emit('join_room', { room: roomName });
+        }
+
+        function login() {
+            // Handle login logic here, possibly using AJAX to communicate with the server
+            // If login is successful, hide the login section and show the chat section
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('chatSection').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="loginSection">
+        <form action="/login" method="post" onsubmit="login(); return false;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="chatSection" style="display: none;">
+        <ul id="messages"></ul>
+        <input id="messageInput" autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="joinRoom('general')">Join General Room</button>
+    </div>
+</body>
+</html>
